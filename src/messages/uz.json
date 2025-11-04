@@ -1,0 +1,45 @@
+{
+  "common": {
+    "home": "Bosh sahifa",
+    "products": "Mahsulotlar",
+    "about": "Biz haqimizda",
+    "cart": "Savat",
+    "login": "Kirish",
+    "logout": "Chiqish",
+    "search": "Qidirish",
+    "loading": "Yuklanmoqda..."
+  },
+  "header": {
+    "welcome": "Xush kelibsiz",
+    "myAccount": "Mening hisobim"
+  },
+  "products": {
+    "title": "Mahsulotlar",
+    "addToCart": "Savatchaga qo'shish",
+    "price": "Narx",
+    "inStock": "Omborda bor",
+    "outOfStock": "Tugagan",
+    "itemsCount": "{count, plural, =0 {mahsulot yo'q} =1 {# mahsulot} other {# mahsulot}}"
+  },
+  "cart": {
+    "title": "Savat",
+    "empty": "Savat bo'sh",
+    "total": "Jami",
+    "checkout": "To'lovga o'tish",
+    "itemsInCart": "{count} ta mahsulot"
+  },
+  "auth": {
+    "login": "Tizimga kirish",
+    "register": "Ro'yxatdan o'tish",
+    "email": "Email",
+    "password": "Parol",
+    "forgotPassword": "Parolni unutdingizmi?",
+    "loginSuccess": "Muvaffaqiyatli kirdingiz",
+    "loginError": "Email yoki parol noto'g'ri"
+  },
+  "validation": {
+    "required": "Bu maydon majburiy",
+    "emailInvalid": "Email noto'g'ri",
+    "passwordTooShort": "Parol kamida 8 ta belgidan iborat bo'lishi kerak"
+  }
+}

@@ -19,7 +19,25 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+
+      "@/app/*": ["./src/app/*"],
+      "@/processes/*": ["./src/processes/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/widgets/*": ["./src/widgets/*"],
+      "@/features/*": ["./src/features/*"],
+      "@/entities/*": ["./src/entities/*"],
+      "@/shared/*": ["./src/shared/*"],
+
+      "@/i18n/*": ["./src/i18n/*"],
+
+      "@/ui": ["./src/shared/ui"],
+      "@/lib": ["./src/shared/lib"],
+      "@/api": ["./src/shared/api"],
+      "@/config": ["./src/shared/config"],
+      "@/types": ["./src/shared/types"],
+
+      "@/messages/*": ["./src/messages/*"]
     }
   },
   "include": [
