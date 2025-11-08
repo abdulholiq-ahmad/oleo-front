@@ -37,4 +37,4 @@ export type {
 export { API_ENDPOINTS } from './base/endpoints';
 
 // Interceptors (agar kerak bo'lsa)
-// export { requestInterceptor, responseInterceptor } from './base/interceptors';
+export { requestInterceptor, responseInterceptor } from './base/interceptors';
