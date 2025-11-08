@@ -2,7 +2,7 @@
  * API Endpoints Configuration
  * Barcha backend API endpoints'larini bir joyda saqlash
  */
-
+``;
 const API_BASE = '/api';
 
 // ==========================================
