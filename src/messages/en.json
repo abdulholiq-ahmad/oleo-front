@@ -1,0 +1,45 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "cart": "Cart",
+    "login": "Login",
+    "logout": "Logout",
+    "search": "Search",
+    "loading": "Loading..."
+  },
+  "header": {
+    "welcome": "Welcome",
+    "myAccount": "My Account"
+  },
+  "products": {
+    "title": "Products",
+    "addToCart": "Add to Cart",
+    "price": "Price",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "itemsCount": "{count, plural, =0 {no products} =1 {# product} other {# products}}"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "itemsInCart": "{count} items"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "loginSuccess": "Successfully logged in",
+    "loginError": "Email or password is incorrect"
+  },
+  "validation": {
+    "required": "This field is required",
+    "emailInvalid": "Email is invalid",
+    "passwordTooShort": "Password must be at least 8 characters"
+  }
+}
