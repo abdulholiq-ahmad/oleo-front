@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
-import { FlagIcon } from '@/shared/ui';
+import { FlagIcon } from './FlagIcon';
 import { useState, useRef, useEffect } from 'react';
 
 interface Language {
@@ -43,10 +43,9 @@ export function LocaleSwitcher() {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-gray-50"
+        className="flex items-center gap-2 rounded-full bg-[#F7F7F7] px-5 py-3 transition-colors hover:bg-gray-50"
         aria-label="Change language"
         aria-expanded={isOpen}
       >
@@ -56,36 +55,22 @@ export function LocaleSwitcher() {
         </span>
       </button>
 
-      {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 z-50 mt-2 w-48 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => handleLocaleChange(lang.code)}
-              className={`flex w-full items-center gap-3 px-4 py-2.5 transition-colors hover:bg-gray-50 ${
-                lang.code === locale ? 'bg-blue-50' : ''
-              }`}
-            >
-              <FlagIcon locale={lang.code} size={24} />
-              <div className="flex flex-col items-start">
-                <span className="text-xs text-gray-500">{lang.name}</span>
-              </div>
-              {lang.code === locale && (
-                <svg
-                  className="ml-auto h-5 w-5 text-blue-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              )}
-            </button>
-          ))}
+        <div className="absolute right-0 z-50 mt-5 rounded-lg bg-white px-5 py-2">
+          {languages
+            .filter((lang) => lang.code !== locale)
+            .map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => handleLocaleChange(lang.code)}
+                className="flex w-full items-center gap-3 border-b-2 border-gray-200 px-5 py-3 transition-colors last:border-0 hover:bg-gray-50"
+              >
+                <FlagIcon locale={lang.code} size={24} />
+                <div className="flex flex-col items-start">
+                  <span className="text-base text-[var(--gray-dark)]">{lang.name}</span>
+                </div>
+              </button>
+            ))}
         </div>
       )}
     </div>

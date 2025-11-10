@@ -18,7 +18,10 @@ function Navbar() {
     <ul className="flex flex-row gap-4">
       {navItems.map((item) => (
         <li key={item.key} className="px-6.5">
-          <Link href={item.href} className="text-[18px] text-black hover:text-blue-600 transition">
+          <Link
+            href={item.href}
+            className="text-[18px] text-black transition-all duration-100 hover:text-[var(--primary)]"
+          >
             {t(item.key)}
           </Link>
         </li>

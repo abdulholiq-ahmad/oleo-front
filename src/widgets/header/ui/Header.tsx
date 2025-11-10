@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Image from 'next/image';
-import { LocaleSwitcher } from '@/widgets/locale-switcher';
+import { LocaleSwitcher } from '@/widgets/header/ui/locale-switcher';
 
 function Header() {
   return (

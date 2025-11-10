@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
-import { FlagIcon } from '@/shared/ui';
+import { FlagIcon } from './FlagIcon';
 
 // Compact version - faqat bayroqlar, text yo'q
 export function LocaleSwitcherCompact() {
