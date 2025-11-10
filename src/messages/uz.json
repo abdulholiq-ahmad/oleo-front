@@ -1,4 +1,11 @@
 {
+  "navigation": {
+    "home": "Asosiy",
+    "about": "Biz haqimizda",
+    "products": "Mahsulotlar",
+    "news": "Yangiliklar",
+    "contact": "Aloqa"
+  },
   "common": {
     "home": "Bosh sahifa",
     "products": "Mahsulotlar",

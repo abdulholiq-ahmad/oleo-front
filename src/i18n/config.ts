@@ -1,16 +1,12 @@
-// src/i18n/config.ts
-import { defineRouting } from 'next-intl/routing';
+import { getRequestConfig } from 'next-intl/server';
 
-export const routing = defineRouting({
-  // Qo'llab-quvvatlanadigan tillar
-  locales: ['uz', 'ru', 'en'],
+export const locales = ['uz', 'ru', 'en'] as const;
+export const defaultLocale = 'uz' as const;
 
-  // Default til
-  defaultLocale: 'uz',
-
-  // Locale prefix strategiyasi
-  localePrefix: 'as-needed', // 'always' | 'as-needed' | 'never'
+export default getRequestConfig(async ({ locale }) => {
+  const l = (locales.includes(locale as any) ? locale : defaultLocale) as (typeof locales)[number];
+  return {
+    locale: l,
+    messages: (await import(`../messages/${l}.json`)).default,
+  };
 });
-
-// Type helper
-export type Locale = (typeof routing.locales)[number];

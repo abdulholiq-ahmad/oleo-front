@@ -43,11 +43,11 @@ export function responseInterceptor(response: AxiosResponse) {
   // return response;
 }
 
-export async function responseErrorInterceptor(error: any) {
-  const apiError = ApiError.fromResponse(error);
+export function responseErrorInterceptor(error: any) {
+  const apiError = ApiError.fromAxiosError(error);
 
   // Handle 401 - Redirect to login
-  if ((await apiError).isUnauthorized() && typeof window !== 'undefined') {
+  if (apiError.isUnauthorized() && typeof window !== 'undefined') {
     localStorage.removeItem(STORAGE_KEYS.TOKEN);
     localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN);
     window.location.href = '/login';

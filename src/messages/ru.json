@@ -1,6 +1,13 @@
 {
-  "common": {
+  "navigation": {
     "home": "Главная",
+    "about": "О нас",
+    "products": "Продукты",
+    "news": "Новости",
+    "contact": "Контакты"
+  },
+  "common": {
+    "home": "Главная страница",
     "products": "Продукты",
     "about": "О нас",
     "cart": "Корзина",
@@ -19,7 +26,7 @@
     "price": "Цена",
     "inStock": "В наличии",
     "outOfStock": "Нет в наличии",
-    "itemsCount": "{count, plural, =0 {нет продуктов} =1 {# продукт} few {# продукта} other {# продуктов}}"
+    "itemsCount": "{count, plural, =0 {нет продуктов} =1 {# продукт} other {# продуктов}}"
   },
   "cart": {
     "title": "Корзина",
@@ -29,17 +36,17 @@
     "itemsInCart": "{count} товаров"
   },
   "auth": {
-    "login": "Войти",
+    "login": "Войти в систему",
     "register": "Регистрация",
-    "email": "Электронная почта",
+    "email": "Email",
     "password": "Пароль",
     "forgotPassword": "Забыли пароль?",
     "loginSuccess": "Вы успешно вошли",
-    "loginError": "Email или пароль неверны"
+    "loginError": "Неверный email или пароль"
   },
   "validation": {
     "required": "Это поле обязательно",
-    "emailInvalid": "Email недействителен",
+    "emailInvalid": "Неверный email",
     "passwordTooShort": "Пароль должен содержать не менее 8 символов"
   }
 }
