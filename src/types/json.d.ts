@@ -1,11 +1,11 @@
 // JSON fayllar uchun global type declaration
 declare module '*.json' {
-  const value: any;
+  const value: unknown;
   export default value;
 }
 
 // Yoki aniqroq:
 declare module '@/messages/*.json' {
-  const value: Record<string, any>;
+  const value: Record<string, unknown>;
   export default value;
 }

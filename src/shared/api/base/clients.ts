@@ -1,4 +1,4 @@
-import axios, { type AxiosInstance } from 'axios';
+import axios, { type AxiosInstance, type AxiosRequestConfig } from 'axios';
 import { API_CONFIG } from './config';
 import {
   requestInterceptor,
@@ -28,13 +28,13 @@ export const apiClient = createApiClient();
 
 // Typed API methods
 export const api = {
-  get: <T = any>(url: string, config?: any) => apiClient.get<T>(url, config),
+  get: <T = unknown>(url: string, config?: AxiosRequestConfig) => apiClient.get<T>(url, config),
 
-  post: <T = any>(url: string, data?: any, config?: any) => apiClient.post<T>(url, data, config),
+  post: <T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig) => apiClient.post<T>(url, data, config),
 
-  put: <T = any>(url: string, data?: any, config?: any) => apiClient.put<T>(url, data, config),
+  put: <T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig) => apiClient.put<T>(url, data, config),
 
-  patch: <T = any>(url: string, data?: any, config?: any) => apiClient.patch<T>(url, data, config),
+  patch: <T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig) => apiClient.patch<T>(url, data, config),
 
-  delete: <T = any>(url: string, config?: any) => apiClient.delete<T>(url, config),
+  delete: <T = unknown>(url: string, config?: AxiosRequestConfig) => apiClient.delete<T>(url, config),
 };

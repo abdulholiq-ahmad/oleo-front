@@ -17,7 +17,7 @@ export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
  * Backend odatda quyidagicha format qaytaradi:
  * { success: true, data: {...}, message: "..." }
  */
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   data: T;
   message?: string;
@@ -27,19 +27,19 @@ export interface ApiResponse<T = any> {
  * Alternative response format
  * Ba'zi API'lar faqat data qaytaradi
  */
-export interface ApiResponseSimple<T = any> {
+export interface ApiResponseSimple<T = unknown> {
   data: T;
 }
 
 /**
  * Response with metadata
  */
-export interface ApiResponseWithMeta<T = any> {
+export interface ApiResponseWithMeta<T = unknown> {
   data: T;
   meta?: {
     timestamp: string;
     version: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 
@@ -55,7 +55,7 @@ export interface ApiErrorResponse {
   message: string;
   code: string;
   errors?: Record<string, string[]>; // Validation errors
-  details?: any;
+  details?: unknown;
 }
 
 /**
@@ -150,7 +150,7 @@ export interface SortParams {
  * Filter parameters
  */
 export interface FilterParams {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
@@ -181,8 +181,8 @@ export interface QueryParams {
 export interface ApiRequestConfig {
   method?: HttpMethod;
   headers?: Record<string, string>;
-  params?: Record<string, any>; // URL query parameters
-  data?: any; // Request body
+  params?: Record<string, unknown>; // URL query parameters
+  data?: unknown; // Request body
   timeout?: number;
   withAuth?: boolean; // Automatically add auth token
   signal?: AbortSignal; // For request cancellation
@@ -217,7 +217,7 @@ export interface AuthTokens {
 /**
  * Auth response
  */
-export interface AuthResponse<T = any> {
+export interface AuthResponse<T = unknown> {
   user: T;
   tokens: AuthTokens;
 }
@@ -259,14 +259,14 @@ export interface MultiFileUploadResponse {
 /**
  * Batch request
  */
-export interface BatchRequest<T = any> {
+export interface BatchRequest<T = unknown> {
   requests: T[];
 }
 
 /**
  * Batch response
  */
-export interface BatchResponse<T = any> {
+export interface BatchResponse<T = unknown> {
   results: T[];
   errors?: Array<{
     index: number;
@@ -316,7 +316,7 @@ export interface ApiEndpoint {
 /**
  * API Endpoints collection
  */
-export type ApiEndpoints = Record<string, string | ((...args: any[]) => string)>;
+export type ApiEndpoints = Record<string, string | ((...args: unknown[]) => string)>;
 
 // ==========================================
 // Webhook Types
@@ -325,7 +325,7 @@ export type ApiEndpoints = Record<string, string | ((...args: any[]) => string)>
 /**
  * Webhook payload
  */
-export interface WebhookPayload<T = any> {
+export interface WebhookPayload<T = unknown> {
   event: string;
   data: T;
   timestamp: string;
@@ -385,7 +385,7 @@ export interface CacheOptions {
 export interface RetryOptions {
   maxRetries?: number;
   retryDelay?: number; // in milliseconds
-  retryCondition?: (error: any) => boolean;
+  retryCondition?: (error: unknown) => boolean;
 }
 
 // ==========================================
@@ -397,14 +397,14 @@ export interface RetryOptions {
  */
 export interface GraphQLQuery {
   query: string;
-  variables?: Record<string, any>;
+  variables?: Record<string, unknown>;
   operationName?: string;
 }
 
 /**
  * GraphQL response
  */
-export interface GraphQLResponse<T = any> {
+export interface GraphQLResponse<T = unknown> {
   data?: T;
   errors?: Array<{
     message: string;
@@ -453,7 +453,7 @@ export type Nullable<T> = {
 /**
  * Async function type
  */
-export type AsyncFunction<T = any> = (...args: any[]) => Promise<T>;
+export type AsyncFunction<T = unknown> = (...args: unknown[]) => Promise<T>;
 
 // ==========================================
 // Resource Types (CRUD)
@@ -494,7 +494,7 @@ export interface ResourceListResponse<T> {
 /**
  * Check if response is paginated
  */
-export function isPaginatedResponse<T>(response: any): response is PaginatedResponse<T> {
+export function isPaginatedResponse<T>(response: unknown): response is PaginatedResponse<T> {
   return (
     response &&
     typeof response === 'object' &&
@@ -507,7 +507,7 @@ export function isPaginatedResponse<T>(response: any): response is PaginatedResp
 /**
  * Check if response is error
  */
-export function isApiError(response: any): response is ApiErrorResponse {
+export function isApiError(response: unknown): response is ApiErrorResponse {
   return (
     response && typeof response === 'object' && response.success === false && 'message' in response
   );

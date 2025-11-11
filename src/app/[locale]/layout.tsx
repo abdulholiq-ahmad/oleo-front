@@ -2,15 +2,17 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import '../globals.css';
-import { Header } from '@/widgets/header';
+import { routing } from '@/i18n/routing';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Oleo web sahifasi',
   description: '',
 };
 
-const locales = ['uz', 'ru', 'en'];
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export default async function LocaleLayout({
   children,
@@ -21,17 +23,18 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!locales.includes(locale)) {
+  // Validate that the incoming `locale` parameter is valid
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
+  // Providing all messages to the client
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <body className="container">
         <NextIntlClientProvider messages={messages}>
-          <Header />
           {children}
         </NextIntlClientProvider>
       </body>

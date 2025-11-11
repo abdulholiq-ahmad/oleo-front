@@ -7,7 +7,7 @@ export class ApiError extends Error {
     public readonly code: string,
     public readonly status: number,
     public readonly errors?: Record<string, string[]>,
-    public readonly details?: any
+    public readonly details?: unknown
   ) {
     super(message);
     this.timestamp = new Date();
@@ -24,7 +24,7 @@ export class ApiError extends Error {
   /**
    * Axios error dan ApiError yaratish
    */
-  static fromAxiosError(error: any): ApiError {
+  static fromAxiosError(error: unknown): ApiError {
     // Response error (4xx, 5xx)
     if (error.response) {
       const { data, status, statusText } = error.response;
@@ -58,7 +58,7 @@ export class ApiError extends Error {
   /**
    * Fetch error dan ApiError yaratish
    */
-  static fromFetchError(error: any): ApiError {
+  static fromFetchError(error: unknown): ApiError {
     if (error.name === 'AbortError') {
       return new ApiError("So'rov bekor qilindi", 'ABORTED', 0);
     }
@@ -74,7 +74,7 @@ export class ApiError extends Error {
    * Response object dan ApiError yaratish
    */
   static async fromResponse(response: Response): Promise<ApiError> {
-    let data: any;
+    let data: unknown;
 
     try {
       data = await response.json();
@@ -457,7 +457,7 @@ export function logError(error: unknown, context?: string): void {
 /**
  * Error ni Sentry yoki boshqa monitoring service ga yuborish
  */
-export function reportError(error: unknown, context?: Record<string, any>): void {
+export function reportError(error: unknown, context?: Record<string, unknown>): void {
   // TODO: Integrate with error monitoring service (Sentry, LogRocket, etc)
   if (process.env.NODE_ENV === 'production') {
     // Sentry.captureException(error, { contexts: context });

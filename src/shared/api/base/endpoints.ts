@@ -2,7 +2,7 @@
  * API Endpoints Configuration
  * Barcha backend API endpoints'larini bir joyda saqlash
  */
-``;
+
 const API_BASE = '/api';
 
 // ==========================================
@@ -243,7 +243,7 @@ export const API_ENDPOINTS = {
 /**
  * Build URL with query parameters
  */
-export function buildUrl(endpoint: string, params?: Record<string, any>): string {
+export function buildUrl(endpoint: string, params?: Record<string, unknown>): string {
   if (!params) return endpoint;
 
   const searchParams = new URLSearchParams();

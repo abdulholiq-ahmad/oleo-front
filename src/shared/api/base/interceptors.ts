@@ -25,7 +25,7 @@ export function requestInterceptor(config: InternalAxiosRequestConfig) {
   return config;
 }
 
-export function requestErrorInterceptor(error: any) {
+export function requestErrorInterceptor(error: unknown) {
   return Promise.reject(error);
 }
 
@@ -43,7 +43,7 @@ export function responseInterceptor(response: AxiosResponse) {
   // return response;
 }
 
-export function responseErrorInterceptor(error: any) {
+export function responseErrorInterceptor(error: unknown) {
   const apiError = ApiError.fromAxiosError(error);
 
   // Handle 401 - Redirect to login
