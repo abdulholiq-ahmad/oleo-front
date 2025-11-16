@@ -56,21 +56,23 @@ export function LocaleSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 z-50 mt-5 rounded-lg bg-white px-5 py-2">
-          {languages
-            .filter((lang) => lang.code !== locale)
-            .map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLocaleChange(lang.code)}
-                className="flex w-full items-center gap-3 border-b-2 border-gray-200 px-5 py-3 transition-colors last:border-0 hover:bg-gray-50"
-              >
-                <FlagIcon locale={lang.code} size={24} />
-                <div className="flex flex-col items-start">
-                  <span className="text-base text-[var(--gray-dark)]">{lang.name}</span>
-                </div>
-              </button>
-            ))}
+        <div className="absolute right-0 z-50 mt-5 rounded-lg bg-white shadow-lg">
+          <div className="flex flex-col p-3">
+            {languages
+              .filter((lang) => lang.code !== locale)
+              .map((lang, index, array) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLocaleChange(lang.code)}
+                  className={`hover:bg-opacity-90 flex w-full items-center gap-3 rounded-lg px-4 py-3 transition-colors ${
+                    index !== array.length - 1 ? 'border-b border-gray-200' : ''
+                  }`}
+                >
+                  <FlagIcon locale={lang.code} size={24} />
+                  <span className="text-gray-dark text-base font-medium">{lang.name}</span>
+                </button>
+              ))}
+          </div>
         </div>
       )}
     </div>

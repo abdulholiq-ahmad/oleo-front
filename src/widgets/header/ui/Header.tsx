@@ -4,6 +4,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Image from 'next/image';
 import { LocaleSwitcher } from '@/widgets/header/ui/locale-switcher';
+import { Button } from '@/widgets/button';
 
 function Header() {
   return (
@@ -14,6 +15,7 @@ function Header() {
       </div>
       <div className="flex flex-row items-center gap-3">
         <LocaleSwitcher />
+        <Button size="small" text="Hamkorlik" />
       </div>
     </div>
   );

@@ -8,10 +8,10 @@ function Navbar() {
   const t = useTranslations('navigation');
 
   const navItems = [
-    { key: 'home', href: '/' },
-    { key: 'about', href: '/about' },
-    { key: 'products', href: '/products' },
-    { key: 'news', href: '/news' },
+    { key: 'home', href: '/' as const },
+    { key: 'about', href: '/about' as const },
+    { key: 'products', href: '/products' as const },
+    { key: 'news', href: '/news' as const },
   ];
 
   return (
@@ -20,7 +20,7 @@ function Navbar() {
         <li key={item.key} className="px-6.5">
           <Link
             href={item.href}
-            className="text-[18px] text-black transition-all duration-100 hover:text-[var(--primary)]"
+            className="hover:text-primary text-[18px] text-black transition-all duration-100"
           >
             {t(item.key)}
           </Link>

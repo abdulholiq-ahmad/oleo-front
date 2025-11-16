@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import 'tailwindcss';
 
+@theme {
+  --color-primary: #d72a33;
+  --color-gray-dark: #222222;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --gray-dark: #222222;
-  --primary: #d72a33;
 }
 
 @media (prefers-color-scheme: dark) {
