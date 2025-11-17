@@ -8,14 +8,14 @@ import { Button } from '@/widgets/button';
 
 function Header() {
   return (
-    <div className="flex flex-row items-center justify-between py-5">
+    <div className="sticky top-0 left-0 flex flex-row items-center justify-between bg-white py-5">
       <div className="flex flex-row items-center gap-12">
         <Image src={'/images/logo.png'} alt="Oleo logo image" width={88} height={70} />
         <Navbar />
       </div>
       <div className="flex flex-row items-center gap-3">
         <LocaleSwitcher />
-        <Button size="small" text="Hamkorlik" />
+        <Button text="Hamkorlik" />
       </div>
     </div>
   );

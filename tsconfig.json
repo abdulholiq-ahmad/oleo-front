@@ -28,7 +28,6 @@
       "@/features/*": ["./src/features/*"],
       "@/entities/*": ["./src/entities/*"],
       "@/shared/*": ["./src/shared/*"],
-
       "@/i18n/*": ["./src/i18n/*"],
 
       "@/ui": ["./src/shared/ui"],

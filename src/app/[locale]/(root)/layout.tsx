@@ -5,7 +5,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <main className="mt-auto min-h-screen">{children}</main>
       <Footer />
     </>
   );
