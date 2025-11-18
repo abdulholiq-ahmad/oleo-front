@@ -45,7 +45,7 @@ export function LocaleSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-full bg-[#F7F7F7] px-5 py-3 transition-colors hover:bg-gray-50"
+        className="flex items-center gap-2 rounded-full border border-gray-50 px-5 py-3 transition-colors"
         aria-label="Change language"
         aria-expanded={isOpen}
       >
