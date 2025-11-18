@@ -1,6 +1,6 @@
 interface FooterLinkType {
   name: string;
-  href: string;
+  href: '/' | '/about' | '/products' | '/news' | '/contact';
 }
 
 interface SocialMediaLinkType {
@@ -14,4 +14,4 @@ interface ContactInfoType {
   text: string;
 }
 
-export type { FooterLinkType,SocialMediaLinkType,ContactInfoType };
+export type { FooterLinkType, SocialMediaLinkType, ContactInfoType };
