@@ -17,10 +17,10 @@ function Navbar() {
   return (
     <ul className="flex flex-row gap-4">
       {navItems.map((item) => (
-        <li key={item.key} className="px-6.5">
+        <li key={item.key} className="group px-4 py-2 hover:bg-primary/5 hover:cursor-pointer flex items-center rounded-lg">
           <Link
             href={item.href}
-            className="hover:text-primary text-[18px] text-black transition-all duration-100"
+            className="group-hover:text-primary text-[18px] text-black transition-all duration-100"
           >
             {t(item.key)}
           </Link>
