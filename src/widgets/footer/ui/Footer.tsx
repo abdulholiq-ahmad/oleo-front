@@ -13,8 +13,8 @@ function Footer() {
   const contactList = [{name: "Telefon raqam", text: "+998 (90) 045-35-35"}, {name: "Email", text: "barakafood.oleo1@gmail.com"}, {name: "Manzil", text: "Toshkent shaxar, Chilonzor tumani, A.Temur ko'chasi, 108-uy"}];
 
   return (
-    <footer className="grid grid-cols-2 gap-8 py-10">
-      <div className="container">
+    <footer className="flex flex-col">
+      <div className="container grid grid-cols-2 gap-8">
         <div className='grid grid-cols-2 gap-6'>
           <div>
           <h2 className="text-gray-medium mb-3 text-sm">Oleo</h2>
@@ -56,9 +56,9 @@ function Footer() {
           </ul>
           </div>
         </div>
-        <span className="bg-gray-light h-0.5 w-full" />
-        <div></div>
       </div>
+      <span className="bg-gray-light h-0.5 w-full my-10" />
+      <div className='container'></div>
     </footer>
   );
 }
