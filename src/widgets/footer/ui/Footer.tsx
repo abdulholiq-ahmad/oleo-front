@@ -34,7 +34,7 @@ function Footer() {
                       className="transition-opacity hover:opacity-70"
                       aria-label={item.label}
                     >
-                      <Icon name={item.icon} className="h-6 w-6 text-gray-dark" />
+                      <Icon name={item.icon} className="text-gray-dark h-6 w-6" />
                     </a>
                   </li>
                 ))}

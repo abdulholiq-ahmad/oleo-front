@@ -83,7 +83,7 @@ export function MyComponent() {
   {/* Dropdown Menu */}
   {isOpen && (
     <div className="dropdown">
-      {languages.map(lang => (
+      {languages.map((lang) => (
         <button onClick={handleChange}>
           <FlagIcon locale={lang.code} />
           <div>
@@ -101,7 +101,7 @@ export function MyComponent() {
 ## Tillar
 
 | Kod | Native Name | English Name |
-|-----|-------------|--------------|
+| --- | ----------- | ------------ |
 | uz  | O'zbek      | Uzbek        |
 | ru  | Русский     | Russian      |
 | en  | English     | English      |
@@ -114,10 +114,10 @@ LocaleSwitcher komponentida Tailwind CSS classlar ishlatilgan. O'zgartirishlar:
 
 ```tsx
 // Button styling
-className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white hover:bg-gray-50"
+className = 'flex items-center gap-2 px-3 py-2 rounded-lg bg-white hover:bg-gray-50';
 
 // Dropdown styling
-className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg"
+className = 'absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg';
 ```
 
 ### Yangi til qo'shish
@@ -169,6 +169,7 @@ export const routing = defineRouting({
 ## Browser Support
 
 Barcha zamonaviy brauzerlar qo'llab-quvvatlanadi:
+
 - Chrome/Edge 90+
 - Firefox 88+
 - Safari 14+
