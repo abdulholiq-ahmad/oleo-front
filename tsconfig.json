@@ -20,7 +20,6 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-
       "@/app/*": ["./src/app/*"],
       "@/processes/*": ["./src/processes/*"],
       "@/pages/*": ["./src/pages/*"],
@@ -29,7 +28,6 @@
       "@/entities/*": ["./src/entities/*"],
       "@/shared/*": ["./src/shared/*"],
       "@/i18n/*": ["./src/i18n/*"],
-
       "@/ui": ["./src/shared/ui"],
       "@/lib": ["./src/shared/lib"],
       "@/api": ["./src/shared/api"],
