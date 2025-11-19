@@ -12,4 +12,14 @@
   <symbol id="facebook" viewBox="0 0 24 24" fill="none">
     <path d="M7 10V14H10V21H14V14H17L18 10H14V8C14 7.73478 14.1054 7.48043 14.2929 7.29289C14.4804 7.10536 14.7348 7 15 7H18V3H15C13.6739 3 12.4021 3.52678 11.4645 4.46447C10.5268 5.40215 10 6.67392 10 8V10H7Z" stroke="currentColor" strokeWidth="0.666667" strokeLinecap="round" strokeLinejoin="round"/>
   </symbol>
+
+  <symbol id="arrow-left-rounded" viewBox="0 0 29 29" fill="none">
+    <path d="M14.2144 0.500017C6.64023 0.500017 0.500139 6.64011 0.500139 14.2143C0.500139 21.7885 6.64023 27.9286 14.2144 27.9286C21.7886 27.9286 27.9287 21.7885 27.9287 14.2143C27.9287 6.64011 21.7886 0.500017 14.2144 0.500017Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M15.9288 9.07146L10.786 14.2143L16.0454 19.3572" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="arrow-right-rounded" viewBox="0 0 29 29" fill="none">
+    <path d="M14.2143 27.9286C21.7885 27.9286 27.9286 21.7885 27.9286 14.2143C27.9286 6.64009 21.7885 0.5 14.2143 0.5C6.64009 0.5 0.5 6.64009 0.5 14.2143C0.5 21.7885 6.64009 27.9286 14.2143 27.9286Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.4999 19.3571L17.6427 14.2143L12.3833 9.07141" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>

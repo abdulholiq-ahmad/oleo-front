@@ -2,10 +2,10 @@ import React from 'react';
 import { type ButtonType } from '../types';
 import Image from 'next/image';
 
-function Button({ text }: ButtonType) {
+function Button({ text, className }: ButtonType) {
   return (
     <button
-      className={`group border-gray-light flex min-w-44 flex-row items-center justify-start gap-3 rounded-full border bg-white p-2 hover:cursor-pointer`}
+      className={`group border-gray-light flex min-w-36 flex-row items-center justify-start gap-3 rounded-full border bg-white p-2 hover:cursor-pointer ${className}`}
     >
       <span className="relative flex w-full flex-row items-center gap-3 overflow-hidden rounded-full">
         <span className="bg-primary absolute inset-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
